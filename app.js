@@ -10,19 +10,19 @@ let employee = function (employeeID, fName, department, level, imageUrl) {
             if (level == "Junior") {
                 min = Math.ceil(500);
                 max = Math.floor(1000);
-                return Math.floor(Math.random() * (max - min) + min);
+                return String(Math.floor(Math.random() * (max - min) + min));
 
             }
             else if (level == "Senior") {
                 min = Math.ceil(1500);
                 max = Math.floor(2000);
-                return Math.floor(Math.random() * (max - min) + min);
+                return String(Math.floor(Math.random() * (max - min) + min));
 
             }
             else if (level == "Mid-Senior") {
                 min = Math.ceil(100);
                 max = Math.floor(1500);
-                return Math.floor(Math.random() * (max - min) + min);
+                return String( Math.floor(Math.random() * (max - min) + min));
             
             }
             else {
@@ -30,10 +30,9 @@ let employee = function (employeeID, fName, department, level, imageUrl) {
                 
             }
     }
-    return employeeID, fName, department, level, imageUrl, this.salary;
-
-    };
-let render 
+    return employeeID, fName, department, level, imageUrl, salary();
+};
+ let render=
     [
         new employee("1000", "ghazi", "administration", "Senior", ""),
         new employee("1001", "lana", "Finance", "Senior", ""),
@@ -41,13 +40,14 @@ let render
         new employee("1003", "Saif", "administration", "Mid-Senior", ""),
         new employee("1004", "Omar", "Development", "Senior", ""),
         new employee("1005", "Rana", "Development", "Junior", ""),
-        new employee("1006", "Hadi", "Finance", "Mid-Senior", ""),
+        new employee("1006", "Hadi", "Finance", "Mid-Senior", "")
     ];
 
+var arr = [];
 for (const k of render) {
+    arr.push(Object.values(k));
     console.log(Object.values(k));
 };
-
 var table = document.createElement("table");
 document.body.appendChild(table);
 var tableHead = document.createElement("thead");
@@ -84,20 +84,37 @@ table.appendChild(tableBody);
 
 function tblBody() {
     for (let i = 0; i < 6; i++) {
-        const tr = document.createElement("tr");
-        tableBody.appendChild(tr);
+        const tr = document.createElement("tr");     
         for (let j = 0; j < 5; j++) {
-            if (j === 4) {
-                continue;
-            }
             const td = document.createElement("td");
-            let person = Object.values(employee[i]);
-
-            td.textContent = Object.values(person[j]);
+            if (j == 4)
+                continue;
+            let person = (arr[i]);
+            td.textContent = (person[j]);
             tr.appendChild(td);
         };
+        tableBody.appendChild(tr);
         
-    };
-    
+    };    
 };
 tblBody();
+
+
+
+let form = document.getElementById("form1");
+form.addEventListener('submit', trigBtn);
+
+
+function trigBtn(event){
+
+    let IdName = document.getElementById("IdName").value;
+    let Fname = document.getElementById("Fname").value;
+    let Department = document.getElementById("Department").value;
+    let Level = document.getElementById("Level").value;
+    let ImageUrl = document.getElementById("ImageUrl").value;
+    let Form = new employee(IdName, Fname, Department, Level, ImageUrl);
+    console.log(Form);
+    event.preventDefault();
+    localStorage.setItem("employee", JSON.stringify(Form));
+};
+
