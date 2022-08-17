@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>document</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="./style.css">
+
+
 
 </head>
+
 <body>
-    <script src="./app.js"></script>
+
+
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" id="navId">
         <li class="nav-item">
             <a href="#tab1Id" class="nav-link active">Active</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false">Dropdown</a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="#tab2Id">Action</a>
                 <a class="dropdown-item" href="#tab3Id">Another action</a>
@@ -31,7 +39,7 @@
             <a href="#" class="nav-link disabled">Disabled</a>
         </li>
     </ul>
-    
+
     <!-- Tab panes -->
     <div class="tab-content">
         <div class="tab-pane fade show active" id="tab1Id" role="tabpanel"></div>
@@ -40,15 +48,38 @@
         <div class="tab-pane fade" id="tab4Id" role="tabpanel"></div>
         <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
     </div>
-    
-    <script>
-        $('#navId a').click(e => {
-            e.preventDefault();
-            $(this).tab('show');
-        });
-    </script>
 
+    <form id="form1" name='signup'>
+        <ul>
+            <li><label for="user">User id:</label></li>
+            <li><input type="text" name="user" size="12" id="IdName" /></li>
 
-<footer>this is a footer</footer>    
+            <li><label for="username">Name:</label></li>
+            <li><input type="text" name="username" size="50" id="Fname"/></li>
+
+            <li><label for="Department">Department:</label></li>
+            <li><select name="Department" id="Department">
+                    <option selected="" value="Default">(Please select a Department)</option>
+                    <option value="Administration">Administration</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Development">Development</option>
+                    <option value="Finance">Finance</option>
+                </select></li>
+
+            <li><label for="Level">Level:</label></li>
+            <li><select name="Level" id="Level">
+                    <option selected="" value="Default">(Please select a Level)</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Mid-Senior">Mid-Senior</option>
+                    <option value="Senior">Senior</option>
+                </select></li>
+            <li><label for="imageURl">imageURl:</label></li>
+            <li><input type="text" name="imageURl" size="50" id="ImageUrl"/></li>
+
+            <li><input id="submit" type="submit" name="submit" value="Submit" /></li>
+        </ul>
+    </form>
+    <script src="/app.js"></script>
 </body>
+
 </html>
