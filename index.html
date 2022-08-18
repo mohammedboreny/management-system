@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>document</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
+<<<<<<< HEAD
     <script src="/js/bootstrap.js"></script>
+=======
+    <script src="./js/bootstrap.js"></script>
+>>>>>>> 891ce5d5eb32f4782b8b01eedb00c1f78285c6a2
     <link rel="stylesheet" href="./style.css">
 
 
@@ -18,7 +22,7 @@
 
 
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs" id="navId">
+    <!-- <ul class="nav nav-tabs" id="navId">
         <li class="nav-item">
             <a href="#tab1Id" class="nav-link active">Active</a>
         </li>
@@ -41,13 +45,54 @@
     </ul>
 
     <!-- Tab panes -->
-    <div class="tab-content">
+    <!-- <div class="tab-content">
         <div class="tab-pane fade show active" id="tab1Id" role="tabpanel"></div>
         <div class="tab-pane fade" id="tab2Id" role="tabpanel"></div>
         <div class="tab-pane fade" id="tab3Id" role="tabpanel"></div>
         <div class="tab-pane fade" id="tab4Id" role="tabpanel"></div>
         <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
+    </div> --> -->
+
+    <div class="container w-50">
+        <form id="form1">
+            <div class="mb-3">
+                <label for="IdName" class="form-label">ID</label>
+                <input type="number" class="form-control" id="IdName" aria-describedby="idHelp">
+
+            </div>
+            <div class="mb-3">
+                <label for="fName" class="form-label">Full name</label>
+                <input type="name" class="form-control" id="fName">
+            </div>
+            <div class="mb-3">
+                <label for="Department" class="form-label">Department</label>
+
+                <select class="form-select" aria-label="Default select example" id="Department">
+                    <option value="Administration">Administration</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Development">Development</option>
+                    <option value="Finance">Finance</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="Level" class="form-label">Level</label>
+
+                <select class="form-select" aria-label="Default select example" id="Level">
+                    <option selected>Junior</option>
+                    <option value="Mid-Senior">Mid-Senior</option>
+                    <option value="Senior">Senior</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="ImageUrl" class="form-label">Image URL</label>
+                <input type="url" class="form-control" name="imageURl" id="ImageUrl" aria-describedby="imageUrl">
+
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
+<<<<<<< HEAD
 
     <form id="form1" name='signup'>
         <ul>
@@ -80,6 +125,12 @@
         </ul>
     </form>
     <script src="/app.js"></script>
+=======
+    <div class="container" id="main">
+    </div>
+    <script src="./app.js"></script>
+
+>>>>>>> 891ce5d5eb32f4782b8b01eedb00c1f78285c6a2
 </body>
 
 </html>
